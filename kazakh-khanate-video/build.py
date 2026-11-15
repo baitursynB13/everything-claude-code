@@ -9,6 +9,7 @@
 болмаса сахна нөмірі жазылған қара фон қояды.
 """
 import argparse
+import json
 import subprocess
 import sys
 from pathlib import Path
@@ -97,6 +98,20 @@ def timeline(scale=1.0):
             cues.append((t, t + d, text))
             t += d + pause * scale
         scenes.append((s0, t, title))
+    return cues, scenes
+
+
+def timeline_from_file(path, total):
+    """timings.json (align.py) -> нақты озвучкаға байланған уақыттар."""
+    data = json.loads(path.read_text(encoding="utf-8"))["cues"]
+    cues = [tuple(c) for c in data]
+    scenes, k, start = [], 0, 0.0
+    for n, (title, lines) in enumerate(SCENES):
+        k += len(lines)
+        # сахна келесі сахнаның бірінші сөзінен сәл бұрын ауысады
+        end = total if n == len(SCENES) - 1 else max(cues[k - 1][1], cues[k][0] - 0.15)
+        scenes.append((start, end, title))
+        start = end
     return cues, scenes
 
 
@@ -194,10 +209,13 @@ def main():
     tmp = OUT / "tmp"
     tmp.mkdir(exist_ok=True)
 
-    scale = 1.0
-    if args.audio:
-        scale = audio_len(args.audio) / timeline()[1][-1][1]
-    cues, scenes = timeline(scale)
+    tfile = ROOT / "timings.json"
+    if args.audio and tfile.exists():
+        cues, scenes = timeline_from_file(tfile, audio_len(args.audio))
+    elif args.audio:
+        cues, scenes = timeline(audio_len(args.audio) / timeline()[1][-1][1])
+    else:
+        cues, scenes = timeline()
 
     parts, have = [], 0
     for i, (a, b, _) in enumerate(scenes, 1):
@@ -217,7 +235,7 @@ def main():
     cmd += ["-vf", f"ass={OUT / 'subtitles.ass'}", "-c:v", "libx264",
             "-preset", "medium", "-crf", "20", "-pix_fmt", "yuv420p",
             "-movflags", "+faststart"]
-    cmd += ["-c:a", "aac", "-b:a", "192k", "-shortest"] if args.audio else ["-an"]
+    cmd += ["-c:a", "aac", "-b:a", "192k"] if args.audio else ["-an"]
     final = OUT / "kazakh-khanate-part1.mp4"
     run(cmd + [str(final)])
     for p in tmp.iterdir():
