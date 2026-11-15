@@ -141,7 +141,7 @@ ScaledBorderAndShadow: yes
 
 [V4+ Styles]
 Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
-Style: Sub,DejaVu Sans,74,&H00FFFFFF,&H00FFFFFF,&H00000000,&H96000000,-1,0,0,0,100,100,0,0,1,6,3,2,70,70,520,1
+Style: Sub,DejaVu Sans,68,&H00FFFFFF,&H00FFFFFF,&H00000000,&H96000000,-1,0,0,0,100,100,0,0,1,6,3,2,50,50,400,1
 Style: Label,DejaVu Sans,40,&H0080C8F0,&H00FFFFFF,&H00000000,&H00000000,-1,0,0,0,100,100,0,0,1,2,0,5,60,60,0,1
 
 [Events]
@@ -184,8 +184,9 @@ def render_scene(i, dur, dst):
         run(["ffmpeg", "-y", "-f", "lavfi", "-i",
              f"color=c={shade}:s={W}x{H}:r={FPS}", "-vf", "vignette"] + enc)
     elif clip.suffix.lower() in (".png", ".jpg", ".jpeg", ".webp"):
+        zexpr = f"1+0.14*on/{n}" if i % 2 else f"1.14-0.14*on/{n}"
         zoom = (f"scale={W * 2}:{H * 2}:force_original_aspect_ratio=increase,"
-                f"crop={W * 2}:{H * 2},zoompan=z='1+0.12*on/{n}':d={n}:"
+                f"crop={W * 2}:{H * 2},zoompan=z='{zexpr}':d={n}:"
                 f"x='iw/2-(iw/zoom/2)':y='ih/2-(ih/zoom/2)':s={W}x{H}:fps={FPS}")
         run(["ffmpeg", "-y", "-i", str(clip), "-vf", zoom] + enc)
     else:
@@ -233,7 +234,7 @@ def main():
     if args.audio:
         cmd += ["-i", args.audio]
     cmd += ["-vf", f"ass={OUT / 'subtitles.ass'}", "-c:v", "libx264",
-            "-preset", "medium", "-crf", "20", "-pix_fmt", "yuv420p",
+            "-preset", "medium", "-crf", "23", "-pix_fmt", "yuv420p",
             "-movflags", "+faststart"]
     cmd += ["-c:a", "aac", "-b:a", "192k"] if args.audio else ["-an"]
     final = OUT / "kazakh-khanate-part1.mp4"
