@@ -4,8 +4,8 @@ const fs = require('fs');
 const path = require('path');
 
 (async () => {
-  const art = path.join(__dirname, 'art');
-  const out = path.join(__dirname, 'clips');
+  const art = path.join(__dirname, process.argv[2] || 'art');
+  const out = path.join(__dirname, process.argv[3] || 'clips');
   fs.mkdirSync(out, { recursive: true });
   const browser = await chromium.launch();
   const page = await browser.newPage({ viewport: { width: 1080, height: 1920 }, deviceScaleFactor: 2 });

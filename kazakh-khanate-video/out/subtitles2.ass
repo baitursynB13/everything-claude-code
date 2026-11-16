@@ -1,0 +1,76 @@
+[Script Info]
+ScriptType: v4.00+
+PlayResX: 1080
+PlayResY: 1920
+WrapStyle: 0
+ScaledBorderAndShadow: yes
+
+[V4+ Styles]
+Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
+Style: Sub,DejaVu Sans,68,&H00FFFFFF,&H00FFFFFF,&H00000000,&H96000000,-1,0,0,0,100,100,0,0,1,6,3,2,50,50,400,1
+Style: Label,DejaVu Sans,40,&H0080C8F0,&H00FFFFFF,&H00000000,&H00000000,-1,0,0,0,100,100,0,0,1,2,0,5,60,60,0,1
+
+[Events]
+Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
+Dialogue: 1,0:00:00.20,0:00:01.41,Sub,,0,0,0,,{\fad(60,40)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}Хандық құрылды.
+Dialogue: 1,0:00:02.26,0:00:03.51,Sub,,0,0,0,,{\fad(60,40)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}Бірақ тірі қалу
+Dialogue: 1,0:00:03.51,0:00:04.94,Sub,,0,0,0,,{\fad(60,40)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}одан да қиын болды.
+Dialogue: 1,0:00:06.00,0:00:06.57,Sub,,0,0,0,,{\fad(60,40)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}Ұлы дала
+Dialogue: 1,0:00:06.57,0:00:07.56,Sub,,0,0,0,,{\fad(60,40)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}жас мемлекетке
+Dialogue: 1,0:00:07.56,0:00:08.27,Sub,,0,0,0,,{\fad(60,40)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}ауыр сынақ
+Dialogue: 1,0:00:08.27,0:00:09.56,Sub,,0,0,0,,{\fad(60,40)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}дайындап қойған еді.
+Dialogue: 1,0:00:10.16,0:00:10.92,Sub,,0,0,0,,{\fad(60,40)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}Екінші бөлім.
+Dialogue: 1,0:00:11.44,0:00:12.63,Sub,,0,0,0,,{\fad(60,40)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}Айналасында
+Dialogue: 1,0:00:12.63,0:00:14.11,Sub,,0,0,0,,{\fad(60,40)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}қуатты көршілер болды.
+Dialogue: 1,0:00:14.72,0:00:16.21,Sub,,0,0,0,,{\fad(60,40)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}Әбілқайыр хандығы,
+Dialogue: 1,0:00:16.21,0:00:16.95,Sub,,0,0,0,,{\fad(60,40)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}Моғолстан
+Dialogue: 1,0:00:16.95,0:00:17.82,Sub,,0,0,0,,{\fad(60,40)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}және ойраттар.
+Dialogue: 1,0:00:18.34,0:00:20.21,Sub,,0,0,0,,{\fad(60,40)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}1468 жылы
+Dialogue: 1,0:00:20.21,0:00:21.06,Sub,,0,0,0,,{\fad(60,40)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}Әбілқайыр хан
+Dialogue: 1,0:00:21.06,0:00:21.84,Sub,,0,0,0,,{\fad(60,40)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}Моғолстанға
+Dialogue: 1,0:00:21.84,0:00:22.83,Sub,,0,0,0,,{\fad(60,40)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}жорыққа аттанды!
+Dialogue: 1,0:00:23.32,0:00:24.34,Sub,,0,0,0,,{\fad(60,40)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}Бірақ жолда
+Dialogue: 1,0:00:24.34,0:00:25.46,Sub,,0,0,0,,{\fad(60,40)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}қайтыс болды.
+Dialogue: 1,0:00:25.96,0:00:27.00,Sub,,0,0,0,,{\fad(60,40)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}Хан өлген соң,
+Dialogue: 1,0:00:27.00,0:00:28.85,Sub,,0,0,0,,{\fad(60,40)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}Өзбек ұлысы әлсіреп,
+Dialogue: 1,0:00:28.85,0:00:29.73,Sub,,0,0,0,,{\fad(60,40)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}ыдырай бастады.
+Dialogue: 1,0:00:30.16,0:00:30.68,Sub,,0,0,0,,{\fad(60,40)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}Көп адам
+Dialogue: 1,0:00:30.68,0:00:31.94,Sub,,0,0,0,,{\fad(60,40)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}Керей мен Жәнібектің
+Dialogue: 1,0:00:31.94,0:00:33.00,Sub,,0,0,0,,{\fad(60,40)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}жағына өтті.
+Dialogue: 1,0:00:33.00,0:00:34.41,Sub,,0,0,0,,{\fad(60,40)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}Қазақ хандығы күшейіп,
+Dialogue: 1,0:00:34.41,0:00:35.90,Sub,,0,0,0,,{\fad(60,40)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}халық саны өсті.
+Dialogue: 1,0:00:35.90,0:00:36.86,Sub,,0,0,0,,{\fad(60,40)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}Жас мемлекет
+Dialogue: 1,0:00:36.86,0:00:37.74,Sub,,0,0,0,,{\fad(60,40)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}нығая түсті.
+Dialogue: 1,0:00:38.22,0:00:41.58,Sub,,0,0,0,,{\fad(60,40)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}Керей шамамен 1474 жылы
+Dialogue: 1,0:00:41.58,0:00:42.15,Sub,,0,0,0,,{\fad(60,40)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}дүние салды.
+Dialogue: 1,0:00:42.78,0:00:45.22,Sub,,0,0,0,,{\fad(60,40)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}Жәнібек 1480 жылға дейін
+Dialogue: 1,0:00:45.22,0:00:45.87,Sub,,0,0,0,,{\fad(60,40)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}өмір сүрді.
+Dialogue: 1,0:00:46.29,0:00:47.24,Sub,,0,0,0,,{\fad(60,40)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}Олар хандықтың
+Dialogue: 1,0:00:47.24,0:00:48.33,Sub,,0,0,0,,{\fad(60,40)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}іргетасын қалады.
+Dialogue: 1,0:00:48.84,0:00:50.15,Sub,,0,0,0,,{\fad(60,40)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}Билік Керейдің ұлы
+Dialogue: 1,0:00:50.15,0:00:51.73,Sub,,0,0,0,,{\fad(60,40)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}Бұрындыққа көшті.
+Dialogue: 1,0:00:51.73,0:00:53.32,Sub,,0,0,0,,{\fad(60,40)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}Бірақ ішкі талас-тартыс
+Dialogue: 1,0:00:53.32,0:00:54.61,Sub,,0,0,0,,{\fad(60,40)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}күшейе түсті.
+Dialogue: 1,0:00:54.61,0:00:55.96,Sub,,0,0,0,,{\fad(60,40)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}Ханство бір сәтке
+Dialogue: 1,0:00:55.96,0:00:56.54,Sub,,0,0,0,,{\fad(60,40)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}әлсіреді.
+Dialogue: 1,0:00:56.95,0:00:58.60,Sub,,0,0,0,,{\fad(60,40)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}Бытыраңқылық жау үшін
+Dialogue: 1,0:00:58.60,0:00:59.55,Sub,,0,0,0,,{\fad(60,40)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}таптырмас мүмкіндік болды.
+Dialogue: 1,0:01:00.18,0:01:00.84,Sub,,0,0,0,,{\fad(60,40)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}Сол кезде
+Dialogue: 1,0:01:00.84,0:01:02.02,Sub,,0,0,0,,{\fad(60,40)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}Жәнібектің ұлы
+Dialogue: 1,0:01:02.02,0:01:03.22,Sub,,0,0,0,,{\fad(60,40)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}Қасым көтерілді.
+Dialogue: 1,0:01:03.22,0:01:04.39,Sub,,0,0,0,,{\fad(60,40)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}Ол бытыраңқы
+Dialogue: 1,0:01:04.39,0:01:05.35,Sub,,0,0,0,,{\fad(60,40)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}жұрттарды біріктіріп,
+Dialogue: 1,0:01:05.35,0:01:06.38,Sub,,0,0,0,,{\fad(60,40)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}ханствоның жерін
+Dialogue: 1,0:01:06.38,0:01:07.18,Sub,,0,0,0,,{\fad(60,40)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}кеңейтті.
+Dialogue: 1,0:01:07.18,0:01:07.92,Sub,,0,0,0,,{\fad(60,40)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}Жауларына
+Dialogue: 1,0:01:07.92,0:01:09.22,Sub,,0,0,0,,{\fad(60,40)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}тойтарыс берді.
+Dialogue: 1,0:01:09.22,0:01:09.80,Sub,,0,0,0,,{\fad(60,40)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}Қасым хан
+Dialogue: 1,0:01:09.80,0:01:11.66,Sub,,0,0,0,,{\fad(60,40)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}мемлекет тәртібін бекітіп,
+Dialogue: 1,0:01:11.66,0:01:12.57,Sub,,0,0,0,,{\fad(60,40)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}«Қасқа жол» заңын
+Dialogue: 1,0:01:12.57,0:01:13.37,Sub,,0,0,0,,{\fad(60,40)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}шығарды.
+Dialogue: 1,0:01:13.37,0:01:14.69,Sub,,0,0,0,,{\fad(60,40)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}Қасым ханның тұсында
+Dialogue: 1,0:01:14.69,0:01:15.60,Sub,,0,0,0,,{\fad(60,40)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}Қазақ хандығы
+Dialogue: 1,0:01:15.60,0:01:17.06,Sub,,0,0,0,,{\fad(60,40)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}нағыз мықты мемлекетке
+Dialogue: 1,0:01:17.06,0:01:18.02,Sub,,0,0,0,,{\fad(60,40)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}айналды!
+Dialogue: 1,0:01:18.02,0:01:19.74,Sub,,0,0,0,,{\fad(60,40)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}Сол кезде қазақтың
+Dialogue: 1,0:01:19.74,0:01:21.15,Sub,,0,0,0,,{\fad(60,40)\fscx92\fscy92\t(0,90,\fscx100\fscy100)}үлкен тарихы басталды.

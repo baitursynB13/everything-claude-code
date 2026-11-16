@@ -34,6 +34,12 @@ def weight(text):
     return len(re.sub(r"[^\w]", "", text)) + 1.0
 
 
+import importlib
+import sys
+PART = sys.argv[1] if len(sys.argv) > 1 and sys.argv[1] != "1" else ""
+if PART:
+    _m = importlib.import_module(f"script{PART}")
+    SCENES, GROUPS, DURATION, SPOKEN = _m.SCENES, _m.GROUPS, _m.DURATION, _m.SPOKEN
 cues = [t for _, lines in SCENES for t, _ in lines]
 assert sum(g[2] for g in GROUPS) == len(cues), (sum(g[2] for g in GROUPS), len(cues))
 out, k = [], 0
@@ -49,7 +55,7 @@ for a, b, n in GROUPS:
 for i in range(len(out) - 1):
     if out[i + 1][0] - out[i][1] < 0.4:
         out[i][1] = out[i + 1][0]
-(ROOT / "timings.json").write_text(
+(ROOT / f"timings{PART}.json").write_text(
     json.dumps({"duration": DURATION, "cues": out}, ensure_ascii=False, indent=1) + "\n",
     encoding="utf-8")
-print(len(out), "cues ->", ROOT / "timings.json")
+print(len(out), "cues ->", ROOT / f"timings{PART}.json")

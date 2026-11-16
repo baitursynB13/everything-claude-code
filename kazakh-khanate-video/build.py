@@ -9,6 +9,7 @@
 болмаса сахна нөмірі жазылған қара фон қояды.
 """
 import argparse
+import importlib
 import json
 import subprocess
 import sys
@@ -205,12 +206,18 @@ def audio_len(path):
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--audio", help="озвучка файлы (mp3/wav)")
+    ap.add_argument("--part", type=int, default=1, help="бөлім нөмірі (2+ -> scriptN.py, clipsN/)")
     args = ap.parse_args()
+    global SCENES, CLIPS
+    sfx = "" if args.part == 1 else str(args.part)
+    if sfx:
+        SCENES = importlib.import_module(f"script{sfx}").SCENES
+        CLIPS = ROOT / f"clips{sfx}"
     OUT.mkdir(exist_ok=True)
     tmp = OUT / "tmp"
     tmp.mkdir(exist_ok=True)
 
-    tfile = ROOT / "timings.json"
+    tfile = ROOT / f"timings{sfx}.json"
     if args.audio and tfile.exists():
         cues, scenes = timeline_from_file(tfile, audio_len(args.audio))
     elif args.audio:
@@ -225,24 +232,25 @@ def main():
         parts.append(dst)
     labels = have < len(scenes)
 
-    write_srt(cues, OUT / "subtitles.srt")
-    write_ass(cues, scenes, OUT / "subtitles.ass", labels)
+    write_srt(cues, OUT / f"subtitles{sfx}.srt")
+    ass = OUT / f"subtitles{sfx}.ass"
+    write_ass(cues, scenes, ass, labels)
 
     lst = tmp / "list.txt"
     lst.write_text("".join(f"file '{p}'\n" for p in parts))
     cmd = ["ffmpeg", "-y", "-f", "concat", "-safe", "0", "-i", str(lst)]
     if args.audio:
         cmd += ["-i", args.audio]
-    cmd += ["-vf", f"ass={OUT / 'subtitles.ass'}", "-c:v", "libx264",
+    cmd += ["-vf", f"ass={ass}", "-c:v", "libx264",
             "-preset", "medium", "-crf", "23", "-pix_fmt", "yuv420p",
             "-movflags", "+faststart"]
     cmd += ["-c:a", "aac", "-b:a", "192k"] if args.audio else ["-an"]
-    final = OUT / "kazakh-khanate-part1.mp4"
+    final = OUT / f"kazakh-khanate-part{args.part}.mp4"
     run(cmd + [str(final)])
     for p in tmp.iterdir():
         p.unlink()
     tmp.rmdir()
-    print(f"{final}  {scenes[-1][1]:.1f}s  cues={len(cues)}  clips={have}/12")
+    print(f"{final}  {scenes[-1][1]:.1f}s  cues={len(cues)}  clips={have}/{len(scenes)}")
 
 
 if __name__ == "__main__":
